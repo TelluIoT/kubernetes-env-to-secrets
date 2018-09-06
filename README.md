@@ -30,7 +30,8 @@ $ python main.py --env .env --name lapin
 ```yaml
 apiVersion: v1
 kind: Secret
-metadata: lapin
+metadata:
+  name: lapin
 type: Opaque
 data:
   canard: dHJ1ZQ==

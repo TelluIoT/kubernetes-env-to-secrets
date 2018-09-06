@@ -24,7 +24,8 @@ encodedSecrets = ['  {0}: {1}'.format(
 
 yamlTemplate = Template("""apiVersion: v1
 kind: Secret
-metadata: $name
+metadata:
+  name: $name
 type: Opaque
 data:
 $encodedSecrets""")
