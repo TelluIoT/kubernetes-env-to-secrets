@@ -17,6 +17,15 @@ config.read_file(itertools.chain(['[global]'], args.env), source="env")
 secrets = config.items('global')
 args.env.close()
 
+def loadFiles(secret):
+  if (secret[1].startswith('filecontent=')):
+    with open(secret[1][12:], 'r') as secretfile:
+      data = secretfile.read()
+      return [secret[0], data]
+  return secret
+
+secrets = map(loadFiles, secrets)
+
 encodedSecrets = ['  {0}: {1}'.format(
     secret[0],
     base64.b64encode(secret[1].encode('utf-8')).decode('utf-8')

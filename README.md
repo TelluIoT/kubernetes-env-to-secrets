@@ -20,6 +20,8 @@ $ cat .env
 CANARD=true
 LAPIN=12343
 BONJOUR_LES_GENS=abcdef
+# Can also embed file content
+SECRET_FILE=filecontent=./secret_file
 ```
 
 
@@ -37,4 +39,5 @@ data:
   canard: dHJ1ZQ==
   lapin: MTIzNDM=
   bonjour_les_gens: YWJjZGVm
+  secret_file: aGVsbG8K
 ```
